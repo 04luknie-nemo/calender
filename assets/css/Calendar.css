@@ -1,0 +1,17 @@
+.calender--section {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+  border-radius: 0.5rem;
+  background-color: #222222;
+}
+
+.calender--item {
+  flex: 1;
+  aspect-ratio: 5 / 7;
+  background-color: #e7e7e7;
+}
