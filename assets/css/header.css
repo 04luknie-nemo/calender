@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+    padding: 0px;
+
+
+}
+
+.header-title {
+    text-align: center;
+    font-size: 60px;
+    color: azure;
+    font-family: "Wallpoet", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+.bottom-header {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    height: 20px;
+    padding: 7px 10px;
+    gap: 20px;
+}
+
+.days-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: 100px;
+    gap: 100px;
+
+}
+
+
+.weekday-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+
+}
