@@ -1,108 +1,112 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/header.css" />
-    <link rel="stylesheet" href="assets/css/calendar.css" />
-    <link rel="stylesheet" href="assets/css/sidebar.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Wallpoet&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/lucide@latest"></script>
-  </head>
-  <body>
-    <header>
-      <h1 class="header-title">💉Kentas Kalender💉</h1>
-      <div class="bottom-header">
-        <div class="days-container">
-          <p class="weekday-text">Söndag</p>
-          <p class="weekday-text">Månday</p>
-          <p class="weekday-text">Tisdag</p>
-          <p class="weekday-text">Onsdag</p>
-          <p class="weekday-text">Torsdag</p>
-          <p class="weekday-text">Fredag</p>
-          <p class="weekday-text">Lördag</p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/calendar.css" />
+  <link rel="stylesheet" href="assets/css/sidebar.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Wallpoet&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/aside-top.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1 class="header-title">💉Kentas Kalender💉</h1>
+    <div class="bottom-header">
+      <div class="days-container">
+        <p class="weekday-text">Söndag</p>
+        <p class="weekday-text">Månday</p>
+        <p class="weekday-text">Tisdag</p>
+        <p class="weekday-text">Onsdag</p>
+        <p class="weekday-text">Torsdag</p>
+        <p class="weekday-text">Fredag</p>
+        <p class="weekday-text">Lördag</p>
       </div>
-    </header>
-    <aside>
-      <section class="aside-top-grid">
-        <div>
-          <span>Symbol</span>
+    </div>
+  </header>
+  <aside>
+    <section class="aside-top-grid">
+      <div>
+        <span>⏱️</span>
+        <p>Klockan är <span id="time"></span></p>
+        <p><span id="datum"></span></p>
+      </div>
+      <div class="right-side-box">
+        <p>Idag är det</p>
+        <h2 id="weekday"></h2>
+      </div>
+    </section>
+    <section class="aside-second-grid">
+      <article class="aside-box">
+        <div class="outer-box-icon">
+          <img src="icon-bag.png">
         </div>
-        <div class="right-side-box">
-          <p>Vinter i Willow Creek</p>
-          <h2>Söndag</h2>
-          <p>Snö</p>
+        <h2>SCHEMA FÖR ARBETE/SKOLA</h2>
+      </article>
+      <article class="aside-box">
+        <div class="outer-box-icon">
+          <img src="icon-ballons.png" style="width: 48px; height: 48px;">
         </div>
-      </section>
-      <section class="aside-second-grid">
-        <article class="aside-box">
-          <div class="outer-box-icon">
-            <img src="icon-bag.png">
-          </div>
-          <h2>SCHEMA FÖR ARBETE/SKOLA</h2>
-        </article>
-        <article class="aside-box">
-          <div class="outer-box-icon">
-            <img src="icon-ballons.png" style="width: 48px; height: 48px;">
-          </div>
-          <h2>LÄGG TILL HELGDAG</h2>
-          <div class="outer-add-button">
-            <button class="add-button">+</button>
-          </div>
-        </article>
-        <article class="aside-box">
-          <div class="outer-box-icon">
-            <img src="icon-calendar-check.png">
-          </div>
-          <h2>LÄGG TILL EVENEMANG</h2>
-          <div class="outer-add-button">
-            <button class="add-button">+</button>
-          </div>
-        </article>
-      </section>
-    </aside>
-    <main>
-      <section class="calender--section">
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
+        <h2>LÄGG TILL HELGDAG</h2>
+        <div class="outer-add-button">
+          <button class="add-button">+</button>
+        </div>
+      </article>
+      <article class="aside-box">
+        <div class="outer-box-icon">
+          <img src="icon-calendar-check.png">
+        </div>
+        <h2>LÄGG TILL EVENEMANG</h2>
+        <div class="outer-add-button">
+          <button class="add-button">+</button>
+        </div>
+      </article>
+    </section>
+  </aside>
+  <main>
+    <section class="calender--section">
+      <article class="calender--item">1</article>
+      <article class="calender--item">2</article>
+      <article class="calender--item">3</article>
+      <article class="calender--item">4</article>
+      <article class="calender--item">5</article>
+      <article class="calender--item">6</article>
+      <article class="calender--item">7</article>
 
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
+      <article class="calender--item">1</article>
+      <article class="calender--item">2</article>
+      <article class="calender--item">3</article>
+      <article class="calender--item">4</article>
+      <article class="calender--item">5</article>
+      <article class="calender--item">6</article>
+      <article class="calender--item">7</article>
 
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
+      <article class="calender--item">1</article>
+      <article class="calender--item">2</article>
+      <article class="calender--item">3</article>
+      <article class="calender--item">4</article>
+      <article class="calender--item">5</article>
+      <article class="calender--item">6</article>
+      <article class="calender--item">7</article>
 
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
-      </section>
-    </main>
-  </body>
+      <article class="calender--item">1</article>
+      <article class="calender--item">2</article>
+      <article class="calender--item">3</article>
+      <article class="calender--item">4</article>
+      <article class="calender--item">5</article>
+      <article class="calender--item">6</article>
+      <article class="calender--item">7</article>
+    </section>
+  </main>
+</body>
+
 </html>
