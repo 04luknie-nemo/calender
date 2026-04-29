@@ -106,10 +106,11 @@ aside {
         align-items: center;
         text-align: center;
         gap: 0.7rem;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1rem;
         color: #0f0d03;
-
+    }
+    .aside-top-grid .left-side-box p {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5rem;
     }
 
     .clock-digits {

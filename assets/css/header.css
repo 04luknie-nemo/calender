@@ -30,16 +30,15 @@ header {
 
 .days-container {
     display: flex;
-    margin-left: auto;
-    margin-right: 100px;
+    justify-content: space-around;
+    padding: 1rem 4rem 0 4rem;
     gap: 100px;
-
 }
 
 
 .weekday-text {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: black;
     font-size: 17px;
     font-weight: bold;
 
