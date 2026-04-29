@@ -102,9 +102,9 @@ aside {
     
     body {
         grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
+        grid-template-rows: auto 1fr;
         grid-template-areas: 
             "h h"
-            "a m"
             "a m";
     }
 }

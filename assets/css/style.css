@@ -6,9 +6,12 @@ body {
     display: grid;
     grid-template-areas: 
         "h"
-        "m"
         "m";
+    grid-template-rows: auto auto;
+    min-height: 100vh;
+    background: rgb(245, 90, 90);
 }
+
 main {
     grid-area: m;
     background: rgb(245, 90, 90);
