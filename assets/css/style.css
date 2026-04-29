@@ -1,21 +1,23 @@
 * {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    display: grid;
-    grid-template-areas: 
-        "h"
-        "m";
-    grid-template-rows: auto auto;
-    min-height: 100vh;
-    background: rgb(245, 90, 90);
+  height: 100vh;
+
+  display: grid;
+  grid-template-areas:
+    "h"
+    "m";
+  grid-template-rows: auto auto;
+  background: rgb(245, 90, 90);
 }
 
 main {
-    grid-area: m;
-    background: rgb(245, 90, 90);
-    min-width: 0;
-    width: 100%;
-    overflow-x: hidden;
+  grid-area: m;
+
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-width: 0;
 }
