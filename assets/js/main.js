@@ -5,4 +5,5 @@ import { initClock } from "./aside-top.js";
 window.addEventListener("DOMContentLoaded", () => {
   initClock();
   initCalendar();
+  addTodo();
 });
