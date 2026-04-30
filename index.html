@@ -14,8 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Wallpoet&display=swap"
       rel="stylesheet"
     />
+
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="assets/js/aside-top.js"></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/aside-top.js" defer></script>
+    <script src="assets/js/calendar.js" defer></script>
   </head>
 
   <body>
@@ -35,43 +38,17 @@
           <p class="weekday-text">Lördag</p>
         </div>
       </section>
-      <section class="calender calender-item--section">
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
-
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
-
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
-
-        <article class="calender--item">1</article>
-        <article class="calender--item">2</article>
-        <article class="calender--item">3</article>
-        <article class="calender--item">4</article>
-        <article class="calender--item">5</article>
-        <article class="calender--item">6</article>
-        <article class="calender--item">7</article>
-      </section>
+      <section class="calender calender-item--section"></section>
     </main>
 
     <aside>
-      <div class="calender calender-aside--section"></div>
+      <div class="calender calender-month--section">
+        <p class="month-title"></p>
+        <div class="box">
+          <i class="left-arrow" data-lucide="square-chevron-left"></i>
+          <i class="right-arrow" data-lucide="square-chevron-right"></i>
+        </div>
+      </div>
       <section class="aside-top-grid">
         <div class="left-side-box">
           <p id="datum"></p>
