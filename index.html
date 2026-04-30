@@ -14,6 +14,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Wallpoet&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/form.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="assets/js/aside-top.js"></script>
 </head>
@@ -107,11 +108,21 @@
         <div class="todo-box">
           <h2>Saker Att Göra:</h2>
           <ul id="todo-list">
-            <li id="todo-item-first">Gå ut med sopor</li>
           </ul>
         </div>
       </article>
     </section>
   </aside>
+
+  <form id="addTodoForm">
+    <fieldset class="add-Todo" id="addTodo">
+      <legend class="legend-Header">Att Göra</legend>
+      <label for="description">Beskrivning</label>
+      <input type="text" name="description" id="description" placeholder="Skriv din text" required>
+      <label for="date">Datum</label>
+      <input type="date" name="dateToDo" id="dateToDo" required>
+      <button type="submit" id="submitButton">Skicka</button>
+    </fieldset>
+  </form>
 </body>
 </html>
