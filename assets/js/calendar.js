@@ -1,55 +1,62 @@
-lucide.createIcons();
+import { holidays } from "./holiday.js";
 
-const calenderItemSection = document.querySelector(".calender-item--section");
-const calenderMonthSection = document.querySelector(".calender-month--section");
+export function initCalendar() {
+  lucide.createIcons();
 
-const leftChevron = document.querySelector(".left-arrow");
-const rightChevron = document.querySelector(".right-arrow");
+  const calenderItemSection = document.querySelector(".calender-item--section");
+  const calenderMonthSection = document.querySelector(
+    ".calender-month--section",
+  );
 
-let currentMonth = new Date().getMonth();
+  const leftChevron = document.querySelector(".left-arrow");
+  const rightChevron = document.querySelector(".right-arrow");
 
-const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  let currentMonth = new Date().getMonth();
 
-function renderCalender() {
-  calenderItemSection.innerHTML = "";
+  const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-  const monthName = new Date(2026, currentMonth).toLocaleString("sv-SE", {
-    month: "long",
-  });
-  const monthTitle = document.querySelector(".month-title");
-  monthTitle.classList.add("calender-month--headline");
+  function renderCalender() {
+    calenderItemSection.innerHTML = "";
 
-  monthTitle.textContent = monthName;
+    const monthName = new Date(2026, currentMonth).toLocaleString("sv-SE", {
+      month: "long",
+    });
 
-  const inc = daysInMonth[currentMonth];
+    const monthTitle = document.querySelector(".month-title");
+    monthTitle.classList.add("calender-month--headline");
 
-  for (let i = 0; i < inc; i++) {
-    let calenderItem = document.createElement("article");
-    calenderItem.classList.add("calender--item");
+    monthTitle.textContent = monthName;
 
-    calenderItem.textContent = [i + 1];
+    const inc = daysInMonth[currentMonth];
 
-    calenderItemSection.appendChild(calenderItem);
+    for (let i = 0; i < inc; i++) {
+      let calenderItem = document.createElement("article");
+      calenderItem.classList.add("calender--item");
+
+      calenderItem.textContent = [i + 1];
+
+      calenderItemSection.appendChild(calenderItem);
+    }
+
+    const calenderItems = document.querySelectorAll(".calender--item");
+
+    for (let i = 0; i < calenderItems.length; i++) {
+      calenderItems[i].addEventListener("click", (e) => {
+        e.target.style.background = "white";
+      });
+    }
   }
-}
 
-renderCalender();
-
-const calenderItems = document.querySelectorAll(".calender--item");
-
-for (let i = 0; i < calenderItems.length; i++) {
-  calenderItems[i].addEventListener("click", (e) => {
-    e.target.style.background = "white";
+  leftChevron.addEventListener("click", () => {
+    currentMonth = (currentMonth - 1 + 12) % 12;
+    renderCalender();
   });
+
+  rightChevron.addEventListener("click", () => {
+    currentMonth = (currentMonth + 1) % 12;
+    renderCalender();
+  });
+
+  renderCalender();
 }
-
-rightChevron.addEventListener("click", () => {
-  currentMonth = (currentMonth + 1) % 12;
-  renderCalender();
-});
-
-leftChevron.addEventListener("click", () => {
-  currentMonth = (currentMonth - 1 + 12) % 12;
-  renderCalender();
-});
