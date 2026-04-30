@@ -91,7 +91,7 @@
       </section>
     </aside>
     <form id="addTodoForm" class="hidden">
-      <fieldset class="add-Todo" id="addTodo">
+      <fieldset class="add-Todo-fieldset" id="addTodo">
         <legend class="legend-Header">Att Göra</legend>
         <label for="description">Beskrivning</label>
         <input
@@ -100,10 +100,11 @@
           id="description"
           placeholder="Skriv din text"
           required
+          class="input-box"
         />
         <label for="date">Datum</label>
-        <input type="date" name="dateToDo" id="dateToDo" required />
-        <button type="submit" id="submitButton">Skicka</button>
+        <input type="date" name="dateToDo" id="dateToDo" required class="input-box"/>
+        <button type="submit" id="submitButton" class="submit-button">Skicka</button>
       </fieldset>
     </form>
   </body>
