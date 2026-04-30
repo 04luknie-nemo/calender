@@ -1,0 +1,11 @@
+.add-Todo {
+    display: flex; 
+    flex-direction: column; 
+    border: 0.1rem solid black; 
+    border-radius: 1rem; 
+    gap: 1rem;
+}
+
+.legend-Header {
+    text-align: center;
+}
