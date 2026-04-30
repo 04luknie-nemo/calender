@@ -17,7 +17,7 @@
     />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="assets/js/main.js" defer></script>
-    <script src="assets/js/form.js"></script>
+    <script src="assets/js/form.js" defer></script>
   </head>
 
   <body>
@@ -79,7 +79,7 @@
           </div>
           <h2>LÄGG TILL EVENEMANG</h2>
           <div class="outer-add-button">
-            <button class="add-button">+</button>
+            <button class="add-button" id="show-forum-button">+</button>
           </div>
           <div class="todo-box">
             <h2>Saker Att Göra:</h2>
@@ -90,7 +90,7 @@
         </article>
       </section>
     </aside>
-    <form id="addTodoForm">
+    <form id="addTodoForm" class="hidden">
       <fieldset class="add-Todo" id="addTodo">
         <legend class="legend-Header">Att Göra</legend>
         <label for="description">Beskrivning</label>

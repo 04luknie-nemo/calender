@@ -21,3 +21,7 @@ main {
   overflow-x: hidden;
   min-width: 0;
 }
+
+.hidden {
+  display: none;
+}

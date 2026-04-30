@@ -1,8 +1,15 @@
 // Antingen ha addingTodo i addTodo ELLER hämta description och date i addingTodo
 const todoList = [];
-function addTodo(todo) {
-  const addTodoForm = document.getElementById("addTodoForm");
 
+const showForum = document.getElementById("show-forum-button");
+showForum.addEventListener("click", displayForum);
+const addTodoForm = document.getElementById("addTodoForm");
+
+function displayForum() {
+  addTodoForm.classList.toggle("hidden");
+}
+
+function addTodo(todo) {
   const fieldSet = document.getElementById("addTodo");
 
   const button = document.getElementById("submitButton");
@@ -32,6 +39,8 @@ function addingTodo(event) {
   todoList.push(todoObject);
   renderTodoList(todoList);
   console.log(todoList);
+  addTodoForm.classList.toggle("hidden");
+  event.target.reset();
 }
 
 function renderTodoList(todoList) {
