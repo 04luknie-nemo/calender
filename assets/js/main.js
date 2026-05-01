@@ -6,4 +6,5 @@ window.addEventListener("DOMContentLoaded", () => {
   initClock();
   initCalendar();
   addTodo();
+  getWeather();
 });
