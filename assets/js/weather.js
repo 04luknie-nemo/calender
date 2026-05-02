@@ -4,6 +4,6 @@ async function getWeather() {
     const temp = data.current.temperature_2m;
     console.log(temp);
     let pagetemp = document.getElementById("temp")
-    pagetemp.textContent = `Temperatur: ${temp}`;
+    pagetemp.textContent = `Temperatur: ${temp} °C`;
 }
 getWeather();
