@@ -1,158 +1,162 @@
 aside {
-    display: none;
+  display: none;
 }
 
 .add-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 40%;
-    cursor: pointer;
-    background-color: #d8d8d8;
-    color: rgb(98, 101, 255);
-    font-size: 3.3rem;
+  width: 45px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-style: none;
+  border-radius: 6px;
+  font-size: 2rem;
+
+  background-color: #e6e6e6;
+
+  transform-origin: center;
+  transition: 0.15s ease;
 }
 
-.outer-add-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 3.1rem;
-    width: 3.1rem;
-    border-radius: 40%;
-    border: 0.1rem solid black;
-    margin: auto;
-    margin-top: 1rem
+.add-button:hover {
+  cursor: pointer;
+  transform: scale(1.0875);
+
+  background-color: #f5f5f5;
+}
+
+.add-button:active {
+  cursor: pointer;
+  transform: scale(0.9);
 }
 
 .outer-box-icon {
-    width: 3rem;
-    height: 3rem;
-    padding: 0.2rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.2rem;
 }
 
-
 @media (min-width: 800px) {
-    aside {
-        grid-area: a;
-        display: flex;
-        max-width: 490px;
-        width: 100%;
-        min-width: 0;
-        max-width: none;
-        background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
-        flex-direction: column;
-        gap: 1rem;
-        overflow: hidden;
-        height: 100%;
-    }
+  aside {
+    grid-area: a;
+    display: flex;
+    max-width: 490px;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    height: 100%;
+  }
 
-    .aside-top-grid {
-        padding: 1rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
+  .aside-top-grid {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 
-    .aside-top-grid h2,
-    .aside-top-grid p {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 1.2rem;
-    }
+  .aside-top-grid h2,
+  .aside-top-grid p {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+  }
 
-    .aside-box {
-        background-image: linear-gradient(to top, #95b6fd 0%, #6da3ff 100%);
-        padding: 0 1rem 1rem 1rem;
-        gap: 1rem;
-        display: grid;
-        grid-template-columns: 3rem 1fr 3rem;
-        border: 0.1rem solid black;
-        border-radius: 0.5rem;
-        min-width: none;
-        max-width: 100%;
-        height: auto;
-        box-sizing: border-box;
+  .aside-box {
+    background-image: linear-gradient(to top, #95b6fd 0%, #6da3ff 100%);
+    padding: 0 1rem 1rem 1rem;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 3rem 1fr 3rem;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem;
+    min-width: none;
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
 
-        justify-content: center;
-        align-items: center;
-    }
+    justify-content: center;
+    align-items: center;
+  }
 
-    .aside-box h2 {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 1.2rem;
-        display: flex;
-        align-items: center;
-    }
+  .aside-box h2 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+  }
 
-    .aside-top-grid .right-side-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.7rem;
-    }
+  .aside-top-grid .right-side-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+  }
 
-    .aside-top-grid .left-side-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        gap: 0.7rem;
-        color: #0f0d03;
-    }
-    .aside-top-grid .left-side-box p {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.5rem;
-    }
+  .aside-top-grid .left-side-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.7rem;
+    color: #0f0d03;
+  }
+  .aside-top-grid .left-side-box p {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.5rem;
+  }
 
-    .clock-digits {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 1.5rem;
-        color: #0f0d03;
-        font-weight: bold;
-    }
+  .clock-digits {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.5rem;
+    color: #0f0d03;
+    font-weight: bold;
+  }
 
-    .aside-second-grid {
-        padding: 0.8rem;
-        display: grid;
-        gap: 1rem;
-        max-width: 100%;
-        width: 100%;
-        box-sizing: border-box;
-    }
+  .aside-second-grid {
+    padding: 0.8rem;
+    display: grid;
+    gap: 1rem;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    .aside-second-grid .aside-box .todo-box{
-        margin-top: 3rem;
-        display: grid;
-        grid-column: 1 / -1;
-        width: 100%;
-        max-width: 100%rem;
-        min-width: 0;
-        min-height: 10rem;
+  .aside-second-grid .aside-box .todo-box {
+    margin-top: 3rem;
+    display: grid;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%rem;
+    min-width: 0;
+    min-height: 10rem;
 
-        border: 0.25rem solid black;
-        border-radius: 0.5rem;
-        background: red;
-        box-sizing: border-box;
-    }
-    .aside-second-grid .aside-box .todo-box, h3 {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    border: 0.25rem solid black;
+    border-radius: 0.5rem;
+    background: red;
+    box-sizing: border-box;
+  }
+  .aside-second-grid .aside-box .todo-box,
+  h3 {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    body {
-        grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
-        grid-template-rows: auto 1fr;
-        grid-template-areas:
-            "h h"
-            "a m";
-    }
+  body {
+    grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "h h"
+      "a m";
+  }
 }
