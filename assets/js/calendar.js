@@ -36,6 +36,18 @@ export function initCalendar() {
 
       calenderItem.textContent = [i + 1];
 
+      const holiday = holidays.find(
+        (h) => h.month === currentMonth + 1 && h.day === i + 1,
+      );
+
+      if (holiday) {
+        const holidayText = document.createElement("p");
+        holidayText.classList.add("holiday-text");
+        holidayText.textContent = holiday.name;
+        calenderItem.appendChild(holidayText);
+        calenderItem.classList.add("calender--holiday");
+      }
+
       calenderItemSection.appendChild(calenderItem);
     }
 

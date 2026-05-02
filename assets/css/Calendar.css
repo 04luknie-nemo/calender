@@ -65,6 +65,9 @@
 }
 
 .calender--item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   border-radius: 8px;
   padding: 6px;
   background-color: #64a0d2;
@@ -72,6 +75,15 @@
 
 .calender--item:hover {
   background-color: #cfe7fa;
+}
+
+.holiday-text {
+  font-size: 0.925rem;
+  overflow-wrap: break-word;
+}
+
+.calender--holiday {
+  background-color: #64d276;
 }
 
 @media (min-width: 800px) {
