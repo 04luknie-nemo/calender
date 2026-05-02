@@ -73,18 +73,18 @@
             <img src="icon-ballons.png" style="width: 48px; height: 48px" />
           </div>
           <h2>LÄGG TILL HELGDAG</h2>
-          <div class="outer-add-button">
-            <button class="add-button">+</button>
-          </div>
+          <button class="add-button">
+            <i data-lucide="plus"></i>
+          </button>
         </article>
         <article class="aside-box">
           <div class="outer-box-icon">
             <img src="icon-calendar-check.png" />
           </div>
           <h2>LÄGG TILL EVENEMANG</h2>
-          <div class="outer-add-button">
-            <button class="add-button" id="show-forum-button">+</button>
-          </div>
+          <button class="add-button" id="show-forum-button">
+            <i data-lucide="plus"></i>
+          </button>
           <div class="todo-box">
             <h2>Saker Att Göra:</h2>
             <ul id="todo-list">
@@ -107,8 +107,16 @@
           class="input-box"
         />
         <label for="date">Datum</label>
-        <input type="date" name="dateToDo" id="dateToDo" required class="input-box"/>
-        <button type="submit" id="submitButton" class="submit-button">Skicka</button>
+        <input
+          type="date"
+          name="dateToDo"
+          id="dateToDo"
+          required
+          class="input-box"
+        />
+        <button type="submit" id="submitButton" class="submit-button">
+          Skicka
+        </button>
       </fieldset>
     </form>
   </body>
