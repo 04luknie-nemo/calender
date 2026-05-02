@@ -1,3 +1,5 @@
+import { todoList, renderTodoList } from "./form.js";
+
 document.getElementById("addTodoForm").addEventListener("submit", addingTodo);
 
 function addingTodo(event) {

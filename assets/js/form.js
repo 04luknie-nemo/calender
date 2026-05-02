@@ -1,3 +1,5 @@
+import { removeTodo } from "./remove-todo.js";
+
 export const todoList = [];
 const showForum = document.getElementById("show-forum-button");
 showForum.addEventListener("click", displayForum);
@@ -5,7 +7,7 @@ showForum.addEventListener("click", displayForum);
 function displayForum() {
   document.getElementById("addTodoForm").classList.toggle("hidden")
 }
-function renderTodoList(todoList) {
+export function renderTodoList(todoList) {
   const list = document.getElementById("todo-list");
   list.innerHTML = "";
   todoList.forEach((todo, index) => {
