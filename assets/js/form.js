@@ -1,4 +1,4 @@
-const todoList = [];
+export const todoList = [];
 const showForum = document.getElementById("show-forum-button");
 showForum.addEventListener("click", displayForum);
 
@@ -15,6 +15,6 @@ function renderTodoList(todoList) {
     button.textContent = "Ta bort";
     button.onclick = () => removeTodo(index);
     li.appendChild(button);
-    list.appendChild(li);    
+    list.appendChild(li);
   });
 }
