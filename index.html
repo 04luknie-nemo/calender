@@ -1,115 +1,111 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/header.css" />
-    <link rel="stylesheet" href="assets/css/calendar.css" />
-    <link rel="stylesheet" href="assets/css/sidebar.css" />
-    <link rel="stylesheet" href="assets/css/form.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Wallpoet&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script type="module" src="assets/js/main.js" defer></script>
-    <script src="assets/js/form.js" defer></script>
-    <script src="assets/js/add-todo.js" defer></script>
-    <script src="assets/js/remove-todo.js" defer></script>
-    <script src="assets/js/weather.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <h1 class="header-title">💉Kentas Kalender💉</h1>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/calendar.css" />
+  <link rel="stylesheet" href="assets/css/sidebar.css" />
+  <link rel="stylesheet" href="assets/css/form.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Wallpoet&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="module" src="assets/js/main.js" defer></script>
+  <script src="assets/js/form.js" defer></script>
+  <script src="assets/js/add-todo.js" defer></script>
+  <script src="assets/js/remove-todo.js" defer></script>
+  <script src="assets/js/weather.js" defer></script>
+  <script type="module" src="assets/js/count-todos.js" defer></script>
+</head>
 
-    <main>
-      <section>
-        <div class="calender calender-day--section">
-          <p class="weekday-text">Söndag</p>
-          <p class="weekday-text">Måndag</p>
-          <p class="weekday-text">Tisdag</p>
-          <p class="weekday-text">Onsdag</p>
-          <p class="weekday-text">Torsdag</p>
-          <p class="weekday-text">Fredag</p>
-          <p class="weekday-text">Lördag</p>
-        </div>
-      </section>
-      <section class="calender calender-item--section"></section>
-    </main>
+<body>
+  <header>
+    <h1 class="header-title">💉Kentas Kalender💉</h1>
+  </header>
 
-    <aside>
-      <div class="calender calender-month--section">
-        <p class="month-title"></p>
-        <div class="box">
-          <i class="left-arrow" data-lucide="square-chevron-left"></i>
-          <i class="right-arrow" data-lucide="square-chevron-right"></i>
-        </div>
+  <main>
+    <section>
+      <div class="calender calender-day--section">
+        <p class="weekday-text">Söndag</p>
+        <p class="weekday-text">Måndag</p>
+        <p class="weekday-text">Tisdag</p>
+        <p class="weekday-text">Onsdag</p>
+        <p class="weekday-text">Torsdag</p>
+        <p class="weekday-text">Fredag</p>
+        <p class="weekday-text">Lördag</p>
       </div>
-      <section class="aside-top-grid">
-        <div class="left-side-box">
-          <p id="datum"></p>
-          <p id="weekday"></p>
+    </section>
+    <section class="calender calender-item--section"></section>
+  </main>
+
+  <aside>
+    <div class="calender calender-month--section">
+      <p class="month-title"></p>
+      <div class="box">
+        <i class="left-arrow" data-lucide="square-chevron-left"></i>
+        <i class="right-arrow" data-lucide="square-chevron-right"></i>
+      </div>
+    </div>
+    <section class="aside-top-grid">
+      <div class="left-side-box">
+        <p id="datum"></p>
+        <p id="weekday"></p>
+      </div>
+      <div class="right-side-box">
+        <p><span id="time" class="clock-digits"></span></p>
+        <p id="temp" class="clock-digits"></p>
+        <p id="count-todays-todos" class="clock-digits"></p>
+      </div>
+    </section>
+    <section class="aside-second-grid">
+      <article class="aside-box">
+        <div class="outer-box-icon">
+          <img src="icon-bag.png" />
         </div>
-        <div class="right-side-box">
-          <p><span id="time" class="clock-digits"></span></p>
-          <p id="temp" class="clock-digits"></p>
+        <h2>SCHEMA FÖR ARBETE/SKOLA</h2>
+      </article>
+      <article class="aside-box">
+        <div class="outer-box-icon">
+          <img src="icon-ballons.png" style="width: 48px; height: 48px" />
         </div>
-      </section>
-      <section class="aside-second-grid">
-        <article class="aside-box">
-          <div class="outer-box-icon">
-            <img src="icon-bag.png" />
-          </div>
-          <h2>SCHEMA FÖR ARBETE/SKOLA</h2>
-        </article>
-        <article class="aside-box">
-          <div class="outer-box-icon">
-            <img src="icon-ballons.png" style="width: 48px; height: 48px" />
-          </div>
-          <h2>LÄGG TILL HELGDAG</h2>
-          <div class="outer-add-button">
-            <button class="add-button">+</button>
-          </div>
-        </article>
-        <article class="aside-box">
-          <div class="outer-box-icon">
-            <img src="icon-calendar-check.png" />
-          </div>
-          <h2>LÄGG TILL EVENEMANG</h2>
-          <div class="outer-add-button">
-            <button class="add-button" id="show-forum-button">+</button>
-          </div>
-          <div class="todo-box">
-            <h2>Saker Att Göra:</h2>
-            <ul id="todo-list">
-              <li id="todo-item-first">Gå ut med sopor</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-    </aside>
-    <form id="addTodoForm" class="hidden">
-      <fieldset class="add-Todo-fieldset" id="addTodo">
-        <legend class="legend-Header">Att Göra</legend>
-        <label for="description">Beskrivning</label>
-        <input
-          type="text"
-          name="description"
-          id="description"
-          placeholder="Skriv din text"
-          required
-          class="input-box"
-        />
-        <label for="date">Datum</label>
-        <input type="date" name="dateToDo" id="dateToDo" required class="input-box"/>
-        <button type="submit" id="submitButton" class="submit-button">Skicka</button>
-      </fieldset>
-    </form>
-  </body>
+        <h2>LÄGG TILL HELGDAG</h2>
+        <div class="outer-add-button">
+          <button class="add-button">+</button>
+        </div>
+      </article>
+      <article class="aside-box">
+        <div class="outer-box-icon">
+          <img src="icon-calendar-check.png" />
+        </div>
+        <h2>LÄGG TILL EVENEMANG</h2>
+        <div class="outer-add-button">
+          <button class="add-button" id="show-forum-button">+</button>
+        </div>
+        <div class="todo-box">
+          <h2>Saker Att Göra:</h2>
+          <ul id="todo-list">
+            <li id="todo-item-first">Gå ut med sopor</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </aside>
+  <form id="addTodoForm" class="hidden">
+    <fieldset class="add-Todo-fieldset" id="addTodo">
+      <legend class="legend-Header">Att Göra</legend>
+      <label for="description">Beskrivning</label>
+      <input type="text" name="description" id="description" placeholder="Skriv din text" required class="input-box" />
+      <label for="date">Datum</label>
+      <input type="date" name="dateToDo" id="dateToDo" required class="input-box" />
+      <button type="submit" id="submitButton" class="submit-button">Skicka</button>
+    </fieldset>
+  </form>
+</body>
+
 </html>
