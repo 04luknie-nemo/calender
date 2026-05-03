@@ -44,37 +44,6 @@ export function renderCalender() {
 
   const inc = daysInMonth[currentMonth];
 
-      calenderItem.textContent = [i + 1];
-      calenderItem.style.textAlign = "center";
-      const holiday = holidays.find(
-        (h) => h.month === currentMonth + 1 && h.day === i + 1,
-      );
-
-      if (holiday) {
-        const holidayText = document.createElement("h3");
-        holidayText.classList.add("holiday-text");
-        holidayText.textContent = holiday.name;
-
-        if (holiday.month >= 3 && holiday.month < 6) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
-        }
-        if (holiday.month >= 6 && holiday.month < 9) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
-        }
-        if (holiday.month >= 9 && holiday.month < 12) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
-        }
-        if (holiday.month === 12 || holiday.month < 3) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
-        }  
-        calenderItem.appendChild(holidayText);
-        calenderItem.classList.add("calender--holiday");
-      }
-      calenderItemSection.appendChild(calenderItem);
   for (let i = 0; i < inc; i++) {
     let calenderItem = document.createElement("article");
     calenderItem.classList.add("calender--item");
@@ -86,19 +55,45 @@ export function renderCalender() {
     );
 
     if (holiday) {
-      const holidayText = document.createElement("p");
+      const holidayText = document.createElement("h3");
       holidayText.classList.add("holiday-text");
       holidayText.textContent = holiday.name;
+
+      if (holiday.month >= 3 && holiday.month < 6) {
+        holidayText.style.backgroundImage =
+          "linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
+        calenderItem.style.backgroundImage =
+          "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
+      }
+      if (holiday.month >= 6 && holiday.month < 9) {
+        holidayText.style.backgroundImage =
+          "linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
+        calenderItem.style.backgroundImage =
+          "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
+      }
+      if (holiday.month >= 9 && holiday.month < 12) {
+        holidayText.style.backgroundImage =
+          "linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
+        calenderItem.style.backgroundImage =
+          "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
+      }
+      if (holiday.month === 12 || holiday.month < 3) {
+        holidayText.style.backgroundImage =
+          "linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
+        calenderItem.style.backgroundImage =
+          "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
+      }
       calenderItem.appendChild(holidayText);
       calenderItem.classList.add("calender--holiday");
     }
+    calenderItemSection.appendChild(calenderItem);
 
     const todosThisDay = todoList.filter(
-      (todo) => todo.date.getMonth() === currentMonth &&
-        todo.date.getDate() === i + 1
+      (todo) =>
+        todo.date.getMonth() === currentMonth && todo.date.getDate() === i + 1,
     );
 
-    todosThisDay.forEach(todo => {
+    todosThisDay.forEach((todo) => {
       const todoText = document.createElement("p");
       todoText.textContent = todo.description;
       calenderItem.appendChild(todoText);
