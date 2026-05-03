@@ -1,4 +1,5 @@
 import { todoList, renderTodoList } from "./form.js";
+import { renderCalender } from "./calendar.js";
 
 document.getElementById("addTodoForm").addEventListener("submit", addingTodo);
 
@@ -21,4 +22,5 @@ function addingTodo(event) {
   renderTodoList(todoList);
   addTodoForm.classList.toggle("hidden");
   event.target.reset();
+  renderCalender();
 }
