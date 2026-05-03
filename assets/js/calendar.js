@@ -1,3 +1,4 @@
+import { todoList } from "./form.js";
 import { holidays } from "./holiday.js";
 
 export function initCalendar() {
@@ -69,6 +70,20 @@ export function initCalendar() {
         calenderItem.classList.add("calender--holiday");
       }
 
+      // LÄGG TILL DETTA:
+      const todosThisDay = todoList.filter(
+        (todo) =>
+          todo.date.getMonth() === currentMonth &&
+          todo.date.getDate() === i + 1,
+      );
+
+      todosThisDay.forEach((todo) => {
+        const todoText = document.createElement("p");
+        todoText.classList.add("todo-text");
+        todoText.textContent = todo.description;
+        calenderItem.appendChild(todoText);
+      });
+
       calenderItemSection.appendChild(calenderItem);
     }
 
@@ -91,5 +106,6 @@ export function initCalendar() {
     renderCalender();
   });
 
+  window.addEventListener("todos-updated", renderCalender);
   renderCalender();
 }

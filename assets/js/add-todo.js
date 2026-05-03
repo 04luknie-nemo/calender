@@ -1,5 +1,4 @@
 import { todoList, renderTodoList } from "./form.js";
-import { renderCalender } from "./calendar.js";
 
 document.getElementById("addTodoForm").addEventListener("submit", addingTodo);
 
@@ -8,6 +7,9 @@ function addingTodo(event) {
   const description = document.getElementById("description");
   const todoDate = new Date(document.getElementById("dateToDo").value);
   const nu = new Date();
+
+  todoDate.setHours(0, 0, 0, 0);
+  nu.setHours(0, 0, 0, 0);
 
   if (nu > todoDate) {
     console.error("För tidigt datum");
@@ -18,9 +20,10 @@ function addingTodo(event) {
     date: todoDate,
   };
 
+  const addTodoForm = document.getElementById("addTodoForm")
   todoList.push(todoObject);
   renderTodoList(todoList);
+  window.dispatchEvent(new Event("todos-updated"));
   addTodoForm.classList.toggle("hidden");
   event.target.reset();
-  renderCalender();
 }
