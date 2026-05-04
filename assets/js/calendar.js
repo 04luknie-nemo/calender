@@ -50,20 +50,28 @@ export function initCalendar() {
         holidayText.style.border = "0.14rem solid #7987a0";
 
         if (holiday.month >= 3 && holiday.month < 6) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
         }
         if (holiday.month >= 6 && holiday.month < 9) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
         }
         if (holiday.month >= 9 && holiday.month < 12) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
         }
         if (holiday.month === 12 || holiday.month < 3) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
         }
 
         calenderItem.appendChild(holidayText);

@@ -20,10 +20,14 @@ function addingTodo(event) {
     date: todoDate,
   };
 
-  const addTodoForm = document.getElementById("addTodoForm")
+  const addTodoForm = document.getElementById("addTodoForm");
+
   todoList.push(todoObject);
   renderTodoList(todoList);
   window.dispatchEvent(new Event("todos-updated"));
   addTodoForm.classList.toggle("hidden");
+  const icon = document.getElementById("show-forum-icon");
+  icon.setAttribute("data-lucide", "plus");
+  lucide.createIcons({ nodes: [icon] });
   event.target.reset();
 }

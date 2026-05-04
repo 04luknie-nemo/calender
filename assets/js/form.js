@@ -12,7 +12,7 @@ function displayForum() {
     "data-lucide",
     form.classList.contains("hidden") ? "plus" : "minus",
   );
-  lucide.createIcons();
+  lucide.createIcons({ nodes: [icon] });
 }
 export function renderTodoList(todoList) {
   const list = document.getElementById("todo-list");
