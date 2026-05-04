@@ -16,13 +16,16 @@ header {
   font-style: normal;
 }
 
-@media (max-width: 799px) {
-}
 
-@media (max-width: 790px) {
+
+@media (max-width: 798px) {
   .header-title {
     font-size: 2rem;
   }
 }
-@media (min-width: 1200px) {
+
+@media (max-width: 433px) {
+  .header-title {
+    font-size: 1rem;
+  }
 }
