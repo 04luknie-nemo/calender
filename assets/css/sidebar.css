@@ -38,7 +38,7 @@ aside {
   padding: 0.2rem;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1170px) {
   aside {
     grid-area: a;
     display: flex;
