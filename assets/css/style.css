@@ -3,25 +3,100 @@
 }
 
 body {
+  background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
+}
+
+.container {
   height: 100vh;
+  width: 100%;
 
   display: grid;
-  grid-template-areas:
-    "h"
-    "m";
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 2fr;
+  align-items: stretch;
+
   background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
 }
 
 main {
-  grid-area: m;
-
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-  min-width: 0;
 }
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 890px) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  aside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  .calender {
+    flex: 1;
+    height: 100%;
+  }
+
+  .aside-box {
+    display: none;
+    margin: 0;
+  }
+
+  .calender-month--section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    align-items: center;
+    background: none !important;
+  }
+
+  .calender-month--section svg {
+    position: relative;
+
+    margin: 0 auto !important;
+  }
+
+  .calender-month--headline {
+    width: 140px;
+    text-align: center;
+    color: black !important;
+    margin: 0 !important;
+  }
+
+  .aside-top-grid {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-side-box,
+  .right-side-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #weekday,
+  .clock-digits {
+    margin-left: 4px;
+  }
 }

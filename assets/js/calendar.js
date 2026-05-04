@@ -12,15 +12,15 @@ export function initCalendar() {
   const leftChevron = document.querySelector(".left-arrow");
   const rightChevron = document.querySelector(".right-arrow");
 
-  let currentMonth = new Date().getMonth();
-
-  const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  let date = new Date();
 
   function renderCalender() {
+    let currentMonth = date.getMonth();
+    let currentYear = date.getFullYear();
+    console.log(currentYear);
     calenderItemSection.innerHTML = "";
 
-    const monthName = new Date(2026, currentMonth).toLocaleString("sv-SE", {
+    const monthName = new Date(currentYear, currentMonth).toLocaleString("sv-SE", {
       month: "long",
     });
 
@@ -29,7 +29,7 @@ export function initCalendar() {
 
     monthTitle.textContent = monthName;
 
-    const inc = daysInMonth[currentMonth];
+    const inc = new Date(currentYear, currentMonth + 1, 0).getDate();
 
     for (let i = 0; i < inc; i++) {
       let calenderItem = document.createElement("article");
@@ -77,10 +77,11 @@ export function initCalendar() {
         calenderItem.appendChild(holidayText);
         calenderItem.classList.add("calender--holiday");
       }
-
+      console.log(todoList)
       // LÄGG TILL DETTA:
       const todosThisDay = todoList.filter(
         (todo) =>
+          todo.date.getFullYear() === currentYear &&
           todo.date.getMonth() === currentMonth &&
           todo.date.getDate() === i + 1,
       );
@@ -105,12 +106,12 @@ export function initCalendar() {
   }
 
   leftChevron.addEventListener("click", () => {
-    currentMonth = (currentMonth - 1 + 12) % 12;
+    date.setMonth(date.getMonth() - 1)
     renderCalender();
   });
 
   rightChevron.addEventListener("click", () => {
-    currentMonth = (currentMonth + 1) % 12;
+    date.setMonth(date.getMonth() + 1)
     renderCalender();
   });
 
