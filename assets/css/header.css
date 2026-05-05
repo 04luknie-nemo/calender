@@ -1,10 +1,10 @@
 header {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
   padding: 0px;
   grid-area: h;
+  height: 50px;
 }
 
 .header-title {
@@ -16,8 +16,6 @@ header {
   font-style: normal;
 }
 
-
-
 @media (max-width: 798px) {
   .header-title {
     font-size: 2rem;
@@ -26,6 +24,6 @@ header {
 
 @media (max-width: 433px) {
   .header-title {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 }

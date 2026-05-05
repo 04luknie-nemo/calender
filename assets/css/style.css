@@ -1,102 +1,66 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
+  box-sizing: border-box;
 }
+
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 body {
-  background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
-}
-
-.container {
-  height: 100vh;
-  width: 100%;
-
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: stretch;
-
+  grid-template-areas:
+    "h"
+    "m";
+  grid-template-rows: auto auto;
   background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
+  width: 100%;
+  overflow-x: hidden;
 }
+
 
 main {
+  grid-area: m;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  min-width: 0;
+  width: 100%;
 }
+
 
 .hidden {
   display: none;
 }
 
-@media (max-width: 890px) {
-  .container {
-    display: flex;
-    flex-direction: column-reverse;
 
-    align-items: stretch;
+@media (min-width: 800px) {
+  body {
+    grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "h h"
+      "a m";
+    overflow-x: hidden;
+    height: 100vh;
   }
-
+}
+@media (max-width: 800px) {
+  body {
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+    box-sizing: border-box;
+  }
   main {
-    flex: 1;
-  }
-
-  aside {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
-    gap: 1rem;
-    overflow: hidden;
-  }
-
-  .calender {
-    flex: 1;
     height: 100%;
-  }
-
-  .aside-box {
-    display: none;
-    margin: 0;
-  }
-
-  .calender-month--section {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    align-items: center;
-    background: none !important;
-  }
-
-  .calender-month--section svg {
-    position: relative;
-
-    margin: 0 auto !important;
-  }
-
-  .calender-month--headline {
-    width: 140px;
-    text-align: center;
-    color: black !important;
-    margin: 0 !important;
-  }
-
-  .aside-top-grid {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .left-side-box,
-  .right-side-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  #weekday,
-  .clock-digits {
-    margin-left: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }

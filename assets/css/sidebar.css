@@ -2,35 +2,44 @@ aside {
   display: none;
 }
 
+
 .add-button {
   width: 45px;
   height: 30px;
+
 
   display: flex;
   justify-content: center;
   align-items: center;
 
+
   border-style: none;
   border-radius: 6px;
   font-size: 2rem;
 
+
   background-color: #e6e6e6;
+
 
   transform-origin: center;
   transition: 0.15s ease;
 }
 
+
 .add-button:hover {
   cursor: pointer;
   transform: scale(1.0875);
 
+
   background-color: #f5f5f5;
 }
+
 
 .add-button:active {
   cursor: pointer;
   transform: scale(0.9);
 }
+
 
 .outer-box-icon {
   width: 3rem;
@@ -38,19 +47,22 @@ aside {
   padding: 0.2rem;
 }
 
-@media (min-width: 1170px) {
+
+@media (min-width: 800px) {
   aside {
+    grid-area: a;
     display: flex;
     max-width: 490px;
     width: 100%;
     min-width: 0;
-    max-width: none;
+    /* max-width: none; */
     background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
     flex-direction: column;
     gap: 1rem;
     overflow: hidden;
     height: 100%;
   }
+
 
   .aside-top-grid {
     padding: 1rem;
@@ -61,11 +73,13 @@ aside {
     box-sizing: border-box;
   }
 
+
   .aside-top-grid h2,
   .aside-top-grid p {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.2rem;
   }
+
 
   .aside-box {
     background-image: linear-gradient(to top, #95b6fd 0%, #6da3ff 100%);
@@ -80,9 +94,11 @@ aside {
     height: auto;
     box-sizing: border-box;
 
+
     justify-content: center;
     align-items: center;
   }
+
 
   .aside-box h2 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -91,6 +107,7 @@ aside {
     align-items: center;
   }
 
+
   .aside-top-grid .right-side-box {
     display: flex;
     flex-direction: column;
@@ -98,6 +115,7 @@ aside {
     align-items: center;
     gap: 0.7rem;
   }
+
 
   .aside-top-grid .left-side-box {
     display: flex;
@@ -113,12 +131,14 @@ aside {
     font-size: 1.5rem;
   }
 
+
   .clock-digits {
     font-family: "Courier New", Courier, monospace;
     font-size: 1.5rem;
     color: #0f0d03;
     font-weight: bold;
   }
+
 
   .aside-second-grid {
     padding: 0.8rem;
@@ -129,6 +149,7 @@ aside {
     box-sizing: border-box;
   }
 
+
   .aside-second-grid .aside-box .todo-box {
     margin-top: 3rem;
     display: grid;
@@ -137,6 +158,7 @@ aside {
     max-width: 100%rem;
     min-width: 0;
     min-height: 10rem;
+
 
     border: 0.25rem solid black;
     border-radius: 0.5rem;
@@ -150,6 +172,7 @@ aside {
     align-items: stretch;
   }
 
+
   #todo-list {
     width: 100%;
     padding: 0.5rem 0.75rem;
@@ -158,27 +181,21 @@ aside {
     box-sizing: border-box;
   }
 
+
   #todo-list li {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 0.75rem;
-    font-family: "Courier New", Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     color: white;
   }
+
 
   .todo-box h2 {
     width: 100%;
     justify-content: center;
     text-align: center;
-  }
-
-  body {
-    grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      "h h"
-      "a m";
   }
 }
