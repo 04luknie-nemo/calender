@@ -1,27 +1,61 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-  height: 100vh;
-
   display: grid;
   grid-template-areas:
     "h"
     "m";
   grid-template-rows: auto auto;
   background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 main {
   grid-area: m;
-
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   min-width: 0;
+  width: 100%;
 }
 
 .hidden {
   display: none;
+}
+
+@media (min-width: 800px) {
+  body {
+    grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "h h"
+      "a m";
+    overflow-x: hidden;
+    height: 100vh;
+  }
+}
+@media (max-width: 800px) {
+  body {
+    height: 100vh;
+    grid-template-rows: auto 1fr;
+    box-sizing: border-box;
+  }
+  main {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
