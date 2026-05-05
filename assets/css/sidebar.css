@@ -44,7 +44,7 @@ aside {
     max-width: 490px;
     width: 100%;
     min-width: 0;
-    max-width: none;
+    /* max-width: none; */
     background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
     flex-direction: column;
     gap: 1rem;
@@ -172,13 +172,5 @@ aside {
     width: 100%;
     justify-content: center;
     text-align: center;
-  }
-
-  body {
-    grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      "h h"
-      "a m";
   }
 }

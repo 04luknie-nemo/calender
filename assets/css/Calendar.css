@@ -8,6 +8,10 @@
   margin: 0;
   padding: 1rem;
   gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .calender-item--section {
@@ -25,6 +29,7 @@
 .calender-day--section {
   display: flex;
   align-items: center;
+  height: 60px;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
@@ -32,6 +37,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  height: 60px;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
@@ -96,6 +103,39 @@
     height: 20px;
   }
 
+@media (max-width: 970px) {
+  .calender-day--section {
+    display: none;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .calender {
+    padding-inline: 1;
+  }
+
+  .calender-item--section {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.1 !important;
+    gap: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .calender-item--section .calender--item {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: 5 / 2;
+  }
+
+  .holiday-text {
+    font-size: 0.7rem;
+  }
   .calender-month--headline {
     font-size: 1.5rem;
   }
@@ -103,5 +143,14 @@
   .calender-month--section svg {
     width: 30px;
     height: 30px;
+  }
+}
+
+@media (width < 500px) {
+  .calender-item--section {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+  .calender-item--section .calender--item {
+    aspect-ratio: 1 / 1;  /* kvadratiska celler */
   }
 }
