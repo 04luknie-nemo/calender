@@ -86,12 +86,13 @@ aside {
     border: 0.1rem solid black;
     border-radius: 0.5rem;
     min-width: none;
-    max-width: 100%;
+    max-width: 100%;    
     height: auto;
     box-sizing: border-box;
 
     justify-content: center;
     align-items: center;
+    overflow: auto;
   }
 
   .aside-box h2 {
@@ -158,6 +159,17 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    min-height: 0;
+    overflow: hidden;
+    max-height: 20rem;
+  }
+
+  #todo-list li {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    min-width: 0;
   }
 
   #todo-list {
@@ -165,8 +177,7 @@ aside {
     padding: 0.5rem 0.75rem;
     margin: 0;
     list-style: none;
-    box-sizing: border-box;
-  }
+    box-sizing: border-box;  }
 
   #todo-list li {
     width: 100%;

@@ -1,7 +1,5 @@
 <!doctype html>
 <html lang="en">
-
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,14 +23,10 @@
   <script type="module" src="assets/js/weather.js" defer></script>
   <script type="module" src="assets/js/count-todos.js" defer></script>
 </head>
-
-
 <body>
   <header>
     <h1 class="header-title">💉Kentas Kalender💉</h1>
   </header>
-
-
   <main>
     <section>
       <div class="calender calender-day--section">
@@ -47,8 +41,6 @@
     </section>
     <section class="calender calender-item--section"></section>
   </main>
-
-
   <aside>
     <div class="calender calender-month--section">
       <p class="month-title"></p>
@@ -71,24 +63,9 @@
     <section class="aside-second-grid">
       <article class="aside-box">
         <div class="outer-box-icon">
-          <img src="icon-bag.png" />
-        </div>
-        <h2>SCHEMA FÖR ARBETE/SKOLA</h2>
-      </article>
-      <article class="aside-box">
-        <div class="outer-box-icon">
-          <img src="icon-ballons.png" style="width: 48px; height: 48px" />
-        </div>
-        <h2>LÄGG TILL HELGDAG</h2>
-        <div class="outer-add-button">
-          <button class="add-button">+</button>
-        </div>
-      </article>
-      <article class="aside-box">
-        <div class="outer-box-icon">
           <img src="icon-calendar-check.png" />
         </div>
-        <h2>LÄGG TILL EVENEMANG</h2>
+        <h2>LÄGG TILL TODO</h2>
         <div class="outer-add-button">
           <button class="add-button" id="show-forum-button" aria-label="Öppna eller stäng formulär">
             <i id="show-forum-icon" data-lucide="plus"></i>
@@ -97,7 +74,6 @@
         <div class="todo-box">
           <h2>Saker Att Göra:</h2>
           <ul id="todo-list">
-            <li id="todo-item-first">Gå ut med sopor</li>
           </ul>
         </div>
       </article>
@@ -106,7 +82,12 @@
   <form id="addTodoForm" class="hidden">
     <fieldset class="add-Todo-fieldset" id="addTodo">
       <legend class="legend-Header">Att Göra</legend>
-      <label for="description">Beskrivning</label>
+      <div class="form-header">
+        <label for="description">Beskrivning</label>
+        <button class="close-form-btn" id="close-form-btn">
+          <i id="close-form-icon" data-lucide="x"></i>
+        </button>
+      </div>
       <input type="text" name="description" id="description" placeholder="Skriv din text" required class="input-box" />
       <label for="date">Datum</label>
       <input type="date" name="dateToDo" id="dateToDo" required class="input-box" />
@@ -114,6 +95,4 @@
     </fieldset>
   </form>
 </body>
-
-
 </html>
