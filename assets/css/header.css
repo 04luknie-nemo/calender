@@ -4,8 +4,8 @@ header {
   background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
   padding: 0px;
   grid-area: h;
+  height: 50px;
 }
-
 
 .header-title {
   text-align: center;
@@ -16,15 +16,14 @@ header {
   font-style: normal;
 }
 
-
-@media (max-width: 799px) {
-}
-
-
-@media (max-width: 790px) {
+@media (max-width: 798px) {
   .header-title {
     font-size: 2rem;
   }
 }
-@media (max-width: 1060px) {
+
+@media (max-width: 433px) {
+  .header-title {
+    font-size: 1.7rem;
+  }
 }
