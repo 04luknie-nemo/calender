@@ -4,6 +4,7 @@ header {
   background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
   padding: 0px;
   grid-area: h;
+  height: 50px;
 }
 
 .header-title {
