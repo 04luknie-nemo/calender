@@ -1,11 +1,18 @@
 import { removeTodo } from "./remove-todo.js";
 
 export const todoList = [];
-const showForum = document.getElementById("show-forum-button");
-showForum.addEventListener("click", displayForum);
+const showForumButton = document.getElementById("show-forum-button");
+showForumButton.addEventListener("click", displayForum);
 
 function displayForum() {
-  document.getElementById("addTodoForm").classList.toggle("hidden")
+  const form = document.getElementById("addTodoForm");
+  form.classList.toggle("hidden");
+  const icon = document.getElementById("show-forum-icon");
+  icon.setAttribute(
+    "data-lucide",
+    form.classList.contains("hidden") ? "plus" : "minus",
+  );
+  lucide.createIcons({ nodes: [icon] });
 }
 export function renderTodoList(todoList) {
   const list = document.getElementById("todo-list");
@@ -28,7 +35,8 @@ export function renderTodoList(todoList) {
     button.style.padding = "0.35rem 0.8rem";
     button.style.borderRadius = "10rem";
     button.style.border = "0.1rem solid #6a2430";
-    button.style.background = "linear-gradient(to top, #ff9a9e 0%, #fecfef 100%)";
+    button.style.background =
+      "linear-gradient(to top, #ff9a9e 0%, #fecfef 100%)";
     button.style.color = "#2e0f14";
     button.style.fontWeight = "700";
     button.style.cursor = "pointer";

@@ -12,15 +12,15 @@ export function initCalendar() {
   const leftChevron = document.querySelector(".left-arrow");
   const rightChevron = document.querySelector(".right-arrow");
 
-  let currentMonth = new Date().getMonth();
-
-  const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  let date = new Date();
 
   function renderCalender() {
+    let currentMonth = date.getMonth();
+    let currentYear = date.getFullYear();
+    console.log(currentYear);
     calenderItemSection.innerHTML = "";
 
-    const monthName = new Date(2026, currentMonth).toLocaleString("sv-SE", {
+    const monthName = new Date(currentYear, currentMonth).toLocaleString("sv-SE", {
       month: "long",
     });
 
@@ -29,7 +29,7 @@ export function initCalendar() {
 
     monthTitle.textContent = monthName;
 
-    const inc = daysInMonth[currentMonth];
+    const inc = new Date(currentYear, currentMonth + 1, 0).getDate();
 
     for (let i = 0; i < inc; i++) {
       let calenderItem = document.createElement("article");
@@ -50,29 +50,38 @@ export function initCalendar() {
         holidayText.style.border = "0.14rem solid #7987a0";
 
         if (holiday.month >= 3 && holiday.month < 6) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #b8e994 0%, #e9f7d0 100%)";
         }
         if (holiday.month >= 6 && holiday.month < 9) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #ffe66d 0%, #fff3b0 100%)";
         }
         if (holiday.month >= 9 && holiday.month < 12) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #d68c45 0%, #f6d365 100%)";
         }
         if (holiday.month === 12 || holiday.month < 3) {
-          holidayText.style.backgroundImage = "linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
-          calenderItem.style.backgroundImage = "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
+          holidayText.style.backgroundImage =
+            "linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
+          calenderItem.style.backgroundImage =
+            "linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), linear-gradient(to top, #a9d6e5 0%, #dff6ff 100%)";
         }
 
         calenderItem.appendChild(holidayText);
         calenderItem.classList.add("calender--holiday");
       }
-
+      console.log(todoList)
       // LÄGG TILL DETTA:
       const todosThisDay = todoList.filter(
         (todo) =>
+          todo.date.getFullYear() === currentYear &&
           todo.date.getMonth() === currentMonth &&
           todo.date.getDate() === i + 1,
       );
@@ -97,12 +106,12 @@ export function initCalendar() {
   }
 
   leftChevron.addEventListener("click", () => {
-    currentMonth = (currentMonth - 1 + 12) % 12;
+    date.setMonth(date.getMonth() - 1)
     renderCalender();
   });
 
   rightChevron.addEventListener("click", () => {
-    currentMonth = (currentMonth + 1) % 12;
+    date.setMonth(date.getMonth() + 1)
     renderCalender();
   });
 

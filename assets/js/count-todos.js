@@ -11,4 +11,5 @@ export function countTodos() {
     const plats = document.getElementById("count-todays-todos")
     plats.textContent = `Antal todos idag: ${amountTodos.length}`;
     console.log("Antal för idag:", amountTodos.length)
+    window.addEventListener("todos-updated", countTodos);
 }
