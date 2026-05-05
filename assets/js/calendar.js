@@ -5,12 +5,7 @@ export function initCalendar() {
   lucide.createIcons();
 
   const calenderItemSection = document.querySelector(".calender-item--section");
-  const calenderMonthSection = document.querySelector(
-    ".calender-month--section",
-  );
-
-  const leftChevron = document.querySelector(".left-arrow");
-  const rightChevron = document.querySelector(".right-arrow");
+  const calenderMonthSection = document.querySelector(".calender-month--section");
 
   let date = new Date();
 
@@ -26,7 +21,6 @@ export function initCalendar() {
 
     const monthTitle = document.querySelector(".month-title");
     monthTitle.classList.add("calender-month--headline");
-
     monthTitle.textContent = monthName;
 
     const inc = new Date(currentYear, currentMonth + 1, 0).getDate();
@@ -75,8 +69,8 @@ export function initCalendar() {
         calenderItem.appendChild(holidayText);
         calenderItem.classList.add("calender--holiday");
       }
-      console.log(todoList)
-      // LÄGG TILL DETTA:
+
+      console.log(todoList);
       const todosThisDay = todoList.filter(
         (todo) =>
           todo.date.getFullYear() === currentYear &&
@@ -95,7 +89,6 @@ export function initCalendar() {
     }
 
     const calenderItems = document.querySelectorAll(".calender--item");
-
     for (let i = 0; i < calenderItems.length; i++) {
       calenderItems[i].addEventListener("click", (e) => {
         e.target.style.background = "white";
@@ -103,14 +96,16 @@ export function initCalendar() {
     }
   }
 
-  leftChevron.addEventListener("click", () => {
-    date.setMonth(date.getMonth() - 1)
-    renderCalender();
-  });
-
-  rightChevron.addEventListener("click", () => {
-    date.setMonth(date.getMonth() + 1)
-    renderCalender();
+  // Delegation istället för direkta listeners
+  calenderMonthSection.addEventListener("click", (e) => {
+    if (e.target.closest(".left-arrow")) {
+      date.setMonth(date.getMonth() - 1);
+      renderCalender();
+    }
+    if (e.target.closest(".right-arrow")) {
+      date.setMonth(date.getMonth() + 1);
+      renderCalender();
+    }
   });
 
   window.addEventListener("todos-updated", renderCalender);
