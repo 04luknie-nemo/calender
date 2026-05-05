@@ -6,7 +6,6 @@ header {
   grid-area: h;
 }
 
-
 .header-title {
   text-align: center;
   font-size: 60px;
@@ -16,15 +15,14 @@ header {
   font-style: normal;
 }
 
-
-@media (max-width: 799px) {
-}
-
-
-@media (max-width: 790px) {
+@media (max-width: 798px) {
   .header-title {
     font-size: 2rem;
   }
 }
-@media (max-width: 1060px) {
+
+@media (max-width: 433px) {
+  .header-title {
+    font-size: 1.7rem;
+  }
 }
