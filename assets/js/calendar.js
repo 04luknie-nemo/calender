@@ -46,8 +46,6 @@ export function initCalendar() {
         const holidayText = document.createElement("h3");
         holidayText.classList.add("holiday-text");
         holidayText.textContent = holiday.name;
-        holidayText.style.borderRadius = "5rem";
-        holidayText.style.border = "0.14rem solid #7987a0";
 
         if (holiday.month >= 3 && holiday.month < 6) {
           holidayText.style.backgroundImage =
