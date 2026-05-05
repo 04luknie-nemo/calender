@@ -43,7 +43,7 @@ main {
 
 @media (min-width: 800px) {
   body {
-    grid-template-columns: clamp(300px, 28vw, 485px) minmax(0, 1fr);
+    grid-template-columns: clamp(320px, 28vw, 490px) minmax(0, 1fr);
     grid-template-rows: auto 1fr;
     grid-template-areas:
       "h h"

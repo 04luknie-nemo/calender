@@ -2,10 +2,8 @@
   font-family: Helvetica, sans-serif;
   font-weight: 400;
 
-
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-
 
   margin: 0;
   padding: 1rem;
@@ -16,21 +14,17 @@
   box-sizing: border-box;
 }
 
-
 .calender-item--section {
   flex: 1;
   align-items: stretch;
 
-
   background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
 }
-
 
 .calender-day--section,
 .calender-month--section {
   height: 40px;
 }
-
 
 .calender-day--section {
   display: flex;
@@ -38,7 +32,6 @@
   height: 60px;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
-
 
 .calender-month--section {
   display: flex;
@@ -49,7 +42,6 @@
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
-
 .calender-month--section svg {
   margin-top: 5px;
   width: 40px;
@@ -59,11 +51,9 @@
   transition: 0.2s ease;
 }
 
-
 .calender-month--section svg:hover {
   transform: scale(1.15);
 }
-
 
 .calender-month--headline {
   text-transform: capitalize;
@@ -73,14 +63,12 @@
   color: #f5f5f5;
 }
 
-
 .weekday-text {
   color: #f5f5f5;
   width: 100%;
   text-align: center;
   font-size: 1.5rem;
 }
-
 
 .calender--item {
   display: flex;
@@ -91,22 +79,20 @@
   background-color: #64a0d2;
 }
 
-
 .calender--item:hover {
   background-color: #cfe7fa;
 }
 
-
 .holiday-text {
-  font-size: 0.925rem;
+  font-size: 0.7rem;
   overflow-wrap: break-word;
+  border: 0.14rem solid #7987a0;
+  border-radius: 0.5rem;
 }
-
 
 .calender--holiday {
   background-color: #64d276;
 }
-
 
 @media (min-width: 800px) {
   .calender--section .calender--item {
@@ -114,13 +100,11 @@
   }
 }
 
-
 @media (min-width: 1085px) {
   .calender--section {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 }
-
 
 @media (max-width: 970px) {
   .calender-day--section {
@@ -128,14 +112,10 @@
   }
 }
 
-
-
-
 @media (max-width: 800px) {
   .calender {
     padding-inline: 0;
   }
-
 
   .calender-item--section {
     grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
@@ -147,7 +127,6 @@
     overflow-y: auto;
   }
 
-
   .calender-item--section .calender--item {
     width: 100%;
     height: auto;
@@ -156,12 +135,10 @@
     aspect-ratio: 5 / 2;
   }
 
-
   .holiday-text {
     font-size: 0.7rem;
   }
 }
-
 
 @media (width < 500px) {
   .calender-item--section {
