@@ -2,8 +2,14 @@ import { removeTodo } from "./remove-todo.js";
 
 export const todoList = [];
 const showForumButton = document.getElementById("show-forum-button");
+
+const closeBtn = document.getElementById("close-form-btn");
+
 if (showForumButton) {
   showForumButton.addEventListener("click", displayForum);
+}
+if (closeBtn) {
+  closeBtn.addEventListener("click", hideForm);
 }
 
 function displayForum() {
@@ -18,6 +24,13 @@ function displayForum() {
       form.classList.contains("hidden") ? "plus" : "minus",
     );
     lucide.createIcons({ nodes: [icon] });
+  }
+}
+
+function hideForm() {
+  const form = document.getElementById("addTodoForm");
+  if (form) {
+    form.classList.toggle("hidden");
   }
 }
 export function renderTodoList(todoList) {
