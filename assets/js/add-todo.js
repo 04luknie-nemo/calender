@@ -27,7 +27,9 @@ function addingTodo(event) {
   window.dispatchEvent(new Event("todos-updated"));
   addTodoForm.classList.toggle("hidden");
   const icon = document.getElementById("show-forum-icon");
-  icon.setAttribute("data-lucide", "plus");
-  lucide.createIcons({ nodes: [icon] });
+  if (icon) {
+    icon.setAttribute("data-lucide", "plus");
+    lucide.createIcons({ nodes: [icon] });
+  }
   event.target.reset();
 }

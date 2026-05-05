@@ -2,17 +2,23 @@ import { removeTodo } from "./remove-todo.js";
 
 export const todoList = [];
 const showForumButton = document.getElementById("show-forum-button");
-showForumButton.addEventListener("click", displayForum);
+if (showForumButton) {
+  showForumButton.addEventListener("click", displayForum);
+}
 
 function displayForum() {
   const form = document.getElementById("addTodoForm");
+  if (!form) return;
+
   form.classList.toggle("hidden");
   const icon = document.getElementById("show-forum-icon");
-  icon.setAttribute(
-    "data-lucide",
-    form.classList.contains("hidden") ? "plus" : "minus",
-  );
-  lucide.createIcons({ nodes: [icon] });
+  if (icon) {
+    icon.setAttribute(
+      "data-lucide",
+      form.classList.contains("hidden") ? "plus" : "minus",
+    );
+    lucide.createIcons({ nodes: [icon] });
+  }
 }
 export function renderTodoList(todoList) {
   const list = document.getElementById("todo-list");

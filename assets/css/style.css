@@ -5,12 +5,14 @@
   box-sizing: border-box;
 }
 
+
 html,
 body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
 }
+
 
 body {
   display: grid;
@@ -23,6 +25,7 @@ body {
   overflow-x: hidden;
 }
 
+
 main {
   grid-area: m;
   display: flex;
@@ -32,9 +35,11 @@ main {
   width: 100%;
 }
 
+
 .hidden {
   display: none;
 }
+
 
 @media (min-width: 800px) {
   body {

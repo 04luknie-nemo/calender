@@ -9,6 +9,7 @@
   max-width: 300px;
   max-height: 400px;
 
+
   position: fixed;
   top: 50%;
   left: 50%;
@@ -17,9 +18,11 @@
   font-size: 1.4rem;
 }
 
+
 .legend-Header {
   text-align: center;
 }
+
 
 .input-box {
   height: 2rem;
