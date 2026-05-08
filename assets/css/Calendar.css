@@ -32,6 +32,9 @@
   height: 60px;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
+/* .calender-day--section p::after {
+  content: "3";
+} */
 
 .calender-month--section {
   display: flex;
@@ -106,11 +109,11 @@
   }
 }
 
-@media (max-width: 970px) {
+/* @media (max-width: 970px) {
   .calender-day--section {
     display: none;
   }
-}
+} */
 
 @media (max-width: 800px) {
   .calender {
@@ -118,13 +121,16 @@
   }
 
   .calender-item--section {
-    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
     width: 100%;
     max-width: 100%;
     padding: 0 !important;
     gap: 15px;
     overflow-x: hidden;
     overflow-y: auto;
+  }
+  .calender-month--section {
+    justify-content: center;
   }
 
   .calender-item--section .calender--item {
@@ -142,7 +148,8 @@
 
 @media (width < 500px) {
   .calender-item--section {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+    gap: 1px;
   }
   .calender-item--section .calender--item {
     aspect-ratio: 1 / 1;  /* kvadratiska celler */

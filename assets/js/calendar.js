@@ -5,7 +5,9 @@ export function initCalendar() {
   lucide.createIcons();
 
   const calenderItemSection = document.querySelector(".calender-item--section");
-  const calenderMonthSection = document.querySelector(".calender-month--section");
+  const calenderMonthSection = document.querySelector(
+    ".calender-month--section",
+  );
 
   let date = new Date();
 
@@ -15,9 +17,12 @@ export function initCalendar() {
     console.log(currentYear);
     calenderItemSection.innerHTML = "";
 
-    const monthName = new Date(currentYear, currentMonth).toLocaleString("sv-SE", {
-      month: "long",
-    });
+    const monthName = new Date(currentYear, currentMonth).toLocaleString(
+      "sv-SE",
+      {
+        month: "long",
+      },
+    );
 
     const monthTitle = document.querySelector(".month-title");
     monthTitle.classList.add("calender-month--headline");
@@ -111,3 +116,27 @@ export function initCalendar() {
   window.addEventListener("todos-updated", renderCalender);
   renderCalender();
 }
+
+const calenderWeekDays = document.querySelector(".calender-day--section");
+const pElements = calenderWeekDays.querySelectorAll("p");
+const weekDays = [
+  "Söndag",
+  "Måndag",
+  "Tisdag",
+  "Onsdag",
+  "Torsdag",
+  "Fredag",
+  "Lördag",
+];
+
+function updateWeekDaysLabels() {
+  pElements.forEach((p, index) => {
+    if (window.innerWidth < 980) {
+      p.textContent = weekDays[index].charAt(0);
+    } else {
+      p.textContent = weekDays[index];
+    }
+  });
+}
+window.addEventListener("resize", updateWeekDaysLabels);
+updateWeekDaysLabels();

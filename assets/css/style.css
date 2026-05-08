@@ -17,10 +17,12 @@ body {
   grid-template-areas:
     "h"
     "m";
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr;
   background-image: linear-gradient(to top, #fcd5f1 0%, #a6c1ee 100%);
   width: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
+  height: 100vh;
 }
 
 main {
@@ -30,6 +32,9 @@ main {
   overflow-x: hidden;
   min-width: 0;
   width: 100%;
+
+  height: 100%;
+  overflow-y: auto;
 }
 
 .hidden {
@@ -45,17 +50,5 @@ main {
       "a m";
     overflow-x: hidden;
     height: 100vh;
-  }
-}
-@media (max-width: 800px) {
-  body {
-    height: 100vh;
-    grid-template-rows: auto 1fr;
-    box-sizing: border-box;
-  }
-  main {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 }
